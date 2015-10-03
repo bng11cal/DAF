@@ -1,0 +1,3 @@
+rootProject.name = 'DAF'
+
+include ':app'
