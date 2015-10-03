@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react-native');
+var ParseJS = require('./parse.js')
 
 var {
 	AppRegistry,
@@ -23,6 +24,7 @@ var styles = StyleSheet.create({
 
 
 class listings extends Component {
+
 	getInitialState() {
 		return {
 			dataSource: new ListView.DataSource({
@@ -30,5 +32,15 @@ class listings extends Component {
 			}),
 			loaded: false,
 		};
+	}
+
+	render() {
+		var listing = parseGetAllObjectsOfClass("Service");
+		return (
+			<View style={styles.container}>
+				<Text>{listing[0].get("name")}</Text>
+				<Text>{listing[0].get("username")}</Text>
+			</View>
+		);
 	}
 }

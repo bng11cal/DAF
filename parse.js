@@ -8,8 +8,8 @@ Parse.initialize("tLbiqADD10mxnXGkav2u6gwCUXM5BMKbaH2rNB3z", "c3JFFGdo7HIXM48YVI
  * Return: results, an array with all the objects of the class
  * Example: parseGetAllObjectsOfClass("Account") or parseGetAllObjectsOfClass("Service")
  */
-function parseGetAllObjectsOfClass(class) {
-  var C = Parse.Object.extend(class);
+function parseGetAllObjectsOfClass(cl) {
+  var C = Parse.Object.extend(cl);
   var query = new Parse.Query(C);
   query.find({
   success: function(results) {
