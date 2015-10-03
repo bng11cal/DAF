@@ -6,6 +6,8 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "react-native": "^0.11.4"
+    "react-native": "^0.11.4",
+    "parse": "^1.6.4",
+    "parse-react": "^0.5.0"
   }
 }
