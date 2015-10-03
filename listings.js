@@ -5,36 +5,33 @@
 'use strict';
 
 var React = require('react-native');
+
 var {
 	AppRegistry,
 	StyleSheet,
 	Text,
+	ListView,
 	View
 } = React;
 
-class listingResults extends Component {
-	constructor(props) {
-		super(props);
-		var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-		this.state = {ds: ds.cloneWithRows(this.props.listings)};
+var styles = StyleSheet.create({
+	ListView: {
+		paddingTop: 20,
+		backgroundColor: '#6b0000'
 	}
+});
 
-	renderRow(rowData, SectionID, rowID) {
-		return(
-			<TouchableHighlight underlayColor='#dddddd'>
-				<View>
-					<Text>{rowData.title}</Text>
-				</View>
-			</TouchableHighlight>
-		);
-	}
+var MOCK_LISTING_DATA = [
+	{rating: 'Rating', price: '$18'}}
+]; 
 
-	render() {
-		return (
-			<ListView
-				ds={this.state.ds}
-				renderRow={this.renderRow.bind(this)}/>
-		);
-	}
+class listings extends Component {
+	getInitialState() {
+		return {
+			dataSource: new ListView.DataSource({
+				rowHasChanged: (row1, row2) => row1 !== 2,
+			}),
+			loaded: false,
+		};
 	}
 }

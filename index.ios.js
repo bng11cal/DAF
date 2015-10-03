@@ -12,6 +12,8 @@ var {
   View,
 } = React;
 
+var listings = require('./listings');
+
 var DAF = React.createClass({
   render: function() {
     return (
