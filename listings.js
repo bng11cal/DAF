@@ -16,14 +16,11 @@ var {
 
 var styles = StyleSheet.create({
 	ListView: {
-		paddingTop: 20,
+		padding: 10,
 		backgroundColor: '#6b0000'
 	}
 });
 
-var MOCK_LISTING_DATA = [
-	{rating: 'Rating', price: '$18'}}
-]; 
 
 class listings extends Component {
 	getInitialState() {
